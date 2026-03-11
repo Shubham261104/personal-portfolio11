@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Personal portfolio" />
+  <title>Shubham Kumar — Portfolio</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="logo" href="#home" aria-label="Go to home">
+        <h1 style="font-size:48px; margin:0; line-height:1">Portfolio</h1>
+      </a>
+      <button class="icon-button" id="themeToggle" aria-label="Toggle color theme" title="Toggle theme">
+        <span class="icon">🌗</span>
+      </button>
+      <button class="icon-button" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="icon">☰</span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="section hero">
+      <div class="container grid-2">
+        <div>
+          <h1 class="headline">Hi, I'm <span class="accent" id="rotatingText">Shubham Kumar</span></h1>
+          <p class="subhead">I build fast, accessible web experiences.</p>
+          <div class="cta-row">
+            <a class="button primary" href="#projects">View Projects</a>
+            <a class="button primary" href="#contact">Contact Me</a>
+          </div>
+        </div>
+        <div class="hero-card profile">
+          <img class="profile-img" src="image/shubhamport.jpeg" alt="Shubham Kumar portrait" />
+          <div class="profile-actions">
+            <a class="button primary block" href="cv/final CV Shubham march26.pdf" target="_blank" rel="noreferrer">See
+              Resume</a>
+          </div>
+          <p>Open to freelance and full-time roles.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+
+        <p>
+          I am a passionate developer who enjoys building efficient, user-friendly, and modern web applications.
+          I focus on writing clean code and creating responsive interfaces that provide a great user experience.
+          I like learning new technologies and continuously improving my development skills.
+        </p>
+
+        <h3 style="margin-top:16px">What Drives Me?</h3>
+
+        <ul class="chip-list" style="display:block; list-style: none; padding-left: 0;">
+          <li style="margin: 6px 0;">Endless Curiosity – I love exploring new technologies, tools, and frameworks.</li>
+
+          <li style="margin: 6px 0;">Problem-Solving Mindset – I enjoy analyzing problems and finding efficient
+            solutions.</li>
+
+          <li style="margin: 6px 0;">Building & Innovation – Turning ideas into functional and high-performance
+            applications.</li>
+
+          <li style="margin: 6px 0;">Continuous Learning – Always improving my knowledge and staying updated with modern
+            development practices.</li>
+
+          <li style="margin: 6px 0;">Collaboration & Growth – Learning from others and contributing positively to
+            projects and teams.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="education-grid">
+          <div class="education-card">
+            <div class="edu-icon">🎓</div>
+            <div class="edu-content">
+              <span class="edu-date">Since Aug' 23</span>
+              <h3>Bachelor of Technology - CSE</h3>
+              <p class="school-name">Lovely Professional University</p>
+              <p class="school-location">Phagwara, Punjab</p>
+              <div class="edu-badge">CGPA : 6.84</div>
+            </div>
+          </div>
+
+          <div class="education-card">
+            <div class="edu-icon">🏫</div>
+            <div class="edu-content">
+              <span class="edu-date">Apr' 21 - Mar' 23</span>
+              <h3>Intermediate</h3>
+              <p class="school-name">Narayan High School</p>
+              <p class="school-location">Aurangabad, Bihar</p>
+              <div class="edu-badge">PERCENTAGE : 75%</div>
+            </div>
+          </div>
+
+          <div class="education-card">
+            <div class="edu-icon">📖</div>
+            <div class="edu-content">
+              <span class="edu-date">Apr' 20 - Mar' 21</span>
+              <h3>Matriculation</h3>
+              <p class="school-name">Vivekanand Mission School</p>
+              <p class="school-location">Aurangabad, Bihar</p>
+              <div class="edu-badge">PERCENTAGE : 75%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+
+        <h3 class="skill-category-title">Programming Languages</h3>
+        <div class="skills-grid" role="list">
+          <div class="skill-card" role="listitem">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span class="skill-icon" aria-hidden="true">✨</span>
+                <span class="skill-name">JavaScript</span>
+              </div>
+              <span class="skill-percent">85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--progress:0.85"></div>
+            </div>
+          </div>
+          <div class="skill-card" role="listitem">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span class="skill-icon" aria-hidden="true">🔷</span>
+                <span class="skill-name">TypeScript</span>
+              </div>
+              <span class="skill-percent">80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--progress:0.8"></div>
+            </div>
+          </div>
+          <div class="skill-card" role="listitem">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span class="skill-icon" aria-hidden="true">☕</span>
+                <span class="skill-name">Java</span>
+              </div>
+              <span class="skill-percent">75%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--progress:0.75"></div>
+            </div>
+          </div>
+          <div class="skill-card" role="listitem">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span class="skill-icon" aria-hidden="true">�</span>
+                <span class="skill-name">Python</span>
+              </div>
+              <span class="skill-percent">70%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--progress:0.7"></div>
+            </div>
+          </div>
+          <div class="skill-card" role="listitem">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span class="skill-icon" aria-hidden="true">🐘</span>
+                <span class="skill-name">PHP</span>
+              </div>
+              <span class="skill-percent">70%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--progress:0.7"></div>
+            </div>
+          </div>
+          <div class="skill-card" role="listitem">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span class="skill-icon" aria-hidden="true">�</span>
+                <span class="skill-name">C</span>
+              </div>
+              <span class="skill-percent">90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--progress:0.9"></div>
+            </div>
+          </div>
+          <div class="skill-card" role="listitem">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span class="skill-icon" aria-hidden="true">➕</span>
+                <span class="skill-name">C++</span>
+              </div>
+              <span class="skill-percent">85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--progress:0.85"></div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="skill-category-title">Frameworks & Web</h3>
+        <div class="skills-grid" role="list">
+          <div class="skill-card" role="listitem">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span class="skill-icon" aria-hidden="true">⚛️</span>
+                <span class="skill-name">React</span>
+              </div>
+              <span class="skill-percent">80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--progress:0.8"></div>
+            </div>
+          </div>
+          <div class="skill-card" role="listitem">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span class="skill-icon" aria-hidden="true">�</span>
+                <span class="skill-name">Node.js</span>
+              </div>
+              <span class="skill-percent">75%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--progress:0.75"></div>
+            </div>
+          </div>
+          <div class="skill-card" role="listitem">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span class="skill-icon" aria-hidden="true">🚏</span>
+                <span class="skill-name">Express</span>
+              </div>
+              <span class="skill-percent">75%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--progress:0.75"></div>
+            </div>
+          </div>
+          <div class="skill-card" role="listitem">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span class="skill-icon" aria-hidden="true">🧱</span>
+                <span class="skill-name">HTML</span>
+              </div>
+              <span class="skill-percent">95%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--progress:0.95"></div>
+            </div>
+          </div>
+          <div class="skill-card" role="listitem">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span class="skill-icon" aria-hidden="true">🎨</span>
+                <span class="skill-name">CSS</span>
+              </div>
+              <span class="skill-percent">90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--progress:0.9"></div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="skill-category-title">Core Fundamentals</h3>
+        <div class="skills-grid" role="list">
+          <div class="skill-card" role="listitem">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span class="skill-icon" aria-hidden="true">🧩</span>
+                <span class="skill-name">OOPs</span>
+              </div>
+              <span class="skill-percent">78%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--progress:0.78"></div>
+            </div>
+          </div>
+          <div class="skill-card" role="listitem">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span class="skill-icon" aria-hidden="true">�️</span>
+                <span class="skill-name">SQL</span>
+              </div>
+              <span class="skill-percent">80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--progress:0.8"></div>
+            </div>
+          </div>
+          <div class="skill-card" role="listitem">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span class="skill-icon" aria-hidden="true">🗃️</span>
+                <span class="skill-name">DBMS</span>
+              </div>
+              <span class="skill-percent">80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--progress:0.8"></div>
+            </div>
+          </div>
+          <div class="skill-card" role="listitem">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span class="skill-icon" aria-hidden="true">🌐</span>
+                <span class="skill-name">Computer Networking</span>
+              </div>
+              <span class="skill-percent">78%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--progress:0.78"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Projects</h2>
+          <div class="filters" role="group" aria-label="Filter projects">
+            <button class="chip filter active" data-filter="all">All</button>
+            <button class="chip filter" data-filter="frontend">Frontend</button>
+            <button class="chip filter" data-filter="backend">Backend</button>
+            <button class="chip filter" data-filter="fullstack">Fullstack</button>
+          </div>
+        </div>
+
+        <div class="cards" id="projectList">
+          <article class="card" data-tags="fullstack php mysql">
+            <h3>Production Planning System</h3>
+            <p>PHP + MySQL app for managing tasks, users, and production workflows.</p>
+            <div class="tag-row">
+              <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">HTML</span><span
+                class="tag">CSS</span><span class="tag">JS</span>
+            </div>
+            <div class="card-actions">
+
+              <a class="button small" href="https://github.com/Shubham261104/Production-Planning" target="_blank"
+                rel="noreferrer">Code</a>
+            </div>
+          </article>
+
+          <article class="card" data-tags="fullstack mern mongodb express react node">
+            <h3>Training Management Center</h3>
+            <p>SkillBridge: A comprehensive MERN stack platform for managing training programs, enrollment, and skill
+              tracking.</p>
+            <div class="tag-row">
+              <span class="tag">MongoDB</span><span class="tag">Express</span><span class="tag">React</span><span
+                class="tag">Node.js</span>
+            </div>
+            <div class="card-actions">
+
+              <a class="button small"
+                href="https://github.com/Shubham261104/Traning-Managment-System/tree/main/SkillBridge" target="_blank"
+                rel="noreferrer">Code</a>
+            </div>
+          </article>
+
+          <article class="card" data-tags="frontend html css js">
+            <h3>Tic Tac Toe</h3>
+            <p>Classic 3x3 Tic Tac Toe game built with HTML, CSS, and JavaScript.</p>
+            <div class="tag-row">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
+            </div>
+            <div class="card-actions">
+
+              <a class="button small" href="https://github.com/Shubham261104/Tic-Tac-Toe-Game" target="_blank"
+                rel="noreferrer">Code</a>
+            </div>
+          </article>
+
+          <article class="card" data-tags="backend c system-programming">
+            <h3>Virtual Memory Optimization</h3>
+            <p>Advanced backend system project implementing efficient virtual memory management and page replacement
+              algorithms.</p>
+            <div class="tag-row">
+              <span class="tag">Python</span><span class="tag">System Programming</span><span class="tag">Backend</span>
+            </div>
+            <div class="card-actions">
+              <a class="button small" href="https://github.com/Shubham261104/Virtual-Memory-Optimization"
+                target="_blank" rel="noreferrer">Code</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificates" class="section">
+      <div class="container">
+        <h2 class="section-title">Certificates</h2>
+        <div class="certificates-grid">
+          <div class="certificate-card">
+            <div class="certificate-icon">🔷</div>
+            <h3>C Programming</h3>
+            <p>Fundamentals of C programming language and problem solving</p>
+            <div class="certificate-actions">
+              <a class="button small" href="Certifacate/C language.pdf" target="_blank" rel="noreferrer">View
+                Certificate</a>
+              <a class="button small" href="Certifacate/CSE101(C).pdf" target="_blank" rel="noreferrer">CSE101</a>
+              <a class="button small" href="Certifacate/GFG(C).pdf" target="_blank" rel="noreferrer">GFG</a>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <div class="certificate-icon">➕</div>
+            <h3>C++ Programming</h3>
+            <p>Object-oriented programming with C++ and advanced concepts</p>
+            <div class="certificate-actions">
+              <a class="button small" href="Certifacate/CSE202 (CPP).pdf" target="_blank" rel="noreferrer">View
+                Certificate</a>
+              <a class="button small" href="Certifacate/CPPGFG.pdf" target="_blank" rel="noreferrer">GFG</a>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <div class="certificate-icon">🐍</div>
+            <h3>Python Programming</h3>
+            <p>Introduction to Python programming and its applications</p>
+            <div class="certificate-actions">
+              <a class="button small" href="Certifacate/Introduction to Python.pdf" target="_blank"
+                rel="noreferrer">View Certificate</a>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <div class="certificate-icon">☕</div>
+            <h3>Java Programming</h3>
+            <p>Java programming fundamentals and object-oriented concepts</p>
+            <div class="certificate-actions">
+              <a class="button small" href="Certifacate/JavaIamNeo.pdf" target="_blank" rel="noreferrer">View
+                Certificate</a>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <div class="certificate-icon">🧩</div>
+            <h3>Data Structures & Algorithms</h3>
+            <p>Advanced data structures and algorithmic problem solving</p>
+            <div class="certificate-actions">
+              <a class="button small" href="Certifacate/CSE 205(DSA).pdf" target="_blank" rel="noreferrer">View
+                Certificate</a>
+            </div>
+          </div>
+
+          <div class="education-card">
+            <div class="certificate-icon">�</div>
+            <h3>Build Generative AI</h3>
+            <p>Solutions with No-Code Tools and GenAI integration</p>
+            <div class="certificate-actions">
+              <a class="button small" href="Certifacate/Build Generative AI Apps and Solutions with No-Code Tools.pdf"
+                target="_blank" rel="noreferrer">GenAI</a>
+              <a class="button small" href="Certifacate/Build Generative Infisis.pdf" target="_blank"
+                rel="noreferrer">Infosys</a>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <div class="certificate-icon">🌐</div>
+            <h3>Computer Networking</h3>
+            <p>Network communication, protocols, and architecture</p>
+            <div class="certificate-actions">
+              <a class="button small" href="Certifacate/Fundamentals of Network Communication CSE306.pdf"
+                target="_blank" rel="noreferrer">Fundamentals</a>
+              <a class="button small" href="Certifacate/The Bits and Bytes of Computer Networking CSE306.pdf"
+                target="_blank" rel="noreferrer">Bits & Bytes</a>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <div class="certificate-icon">🔗</div>
+            <h3>Advanced Networking</h3>
+            <p>TCP/IP, Peer-to-Peer, and Local Area Networks</p>
+            <div class="certificate-actions">
+              <a class="button small" href="Certifacate/TCP IP and Advanced Topics CSE306.pdf" target="_blank"
+                rel="noreferrer">TCP/IP</a>
+              <a class="button small" href="Certifacate/Peer-to-Peer Protocols and Local Area Networks 306.pdf"
+                target="_blank" rel="noreferrer">P2P & LAN</a>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <div class="certificate-icon">📡</div>
+            <h3>Packet Switching</h3>
+            <p>Network algorithms and packet switching technologies</p>
+            <div class="certificate-actions">
+              <a class="button small" href="Certifacate/Packet Switching Networks and Algorithms CSE306.pdf"
+                target="_blank" rel="noreferrer">CSE306</a>
+              <a class="button small" href="Certifacate/Packet Switching Networks and Algorithms CSE211.pdf"
+                target="_blank" rel="noreferrer">CSE211</a>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <div class="certificate-icon">�</div>
+            <h3>Prompt Engineering</h3>
+            <p>Mastering ChatGPT, GenAI, and LLM prompting strategies</p>
+            <div class="certificate-actions">
+              <a class="button small" href="Certifacate/ChatGPT-4 Prompt Engineering ChatGPT, Generative AI & LLM.pdf"
+                target="_blank" rel="noreferrer">View Certificate</a>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <div class="certificate-icon">☁️</div>
+            <h3>Cloud & Systems</h3>
+            <p>Cloud Computing and Hardware/OS fundamentals</p>
+            <div class="certificate-actions">
+              <a class="button small" href="Certifacate/Cloud Computing (1).pdf" target="_blank"
+                rel="noreferrer">Cloud</a>
+              <a class="button small" href="Certifacate/Introduction to Hardware and Operating System CSE211.pdf"
+                target="_blank" rel="noreferrer">Hardware/OS</a>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <div class="certificate-icon">🏢</div>
+            <h3>Infosys Professional</h3>
+            <p>Computational Theory and industry-standard skills</p>
+            <div class="certificate-actions">
+              <a class="button small" href="Certifacate/Infosis.pdf" target="_blank" rel="noreferrer">Professional</a>
+              <a class="button small" href="Certifacate/Computational Theory infosis.pdf" target="_blank"
+                rel="noreferrer">Comp Theory</a>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <div class="certificate-icon">�</div>
+            <h3>Academic & Recognition</h3>
+            <p>LPU achievements, Campus Ambassador, and Symposiums</p>
+            <div class="certificate-actions">
+              <a class="button small" href="Certifacate/LPU2025.pdf" target="_blank" rel="noreferrer">LPU</a>
+              <a class="button small" href="Certifacate/Campus Ambassador.pdf" target="_blank"
+                rel="noreferrer">Ambassador</a>
+              <a class="button small" href="Certifacate/SYMPOSIUM.pdf" target="_blank" rel="noreferrer">Symposium</a>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <div class="certificate-icon">💬</div>
+            <h3>AI Essentials</h3>
+            <p>ChatGPT Essentials and FreeCodeCamp certifications</p>
+            <div class="certificate-actions">
+              <a class="button small" href="Certifacate/ChatGPT Made Easy AI Essentials for Beginners.pdf"
+                target="_blank" rel="noreferrer">AI Easy</a>
+              <a class="button small" href="Certifacate/Freecodecamp Certificate.pdf" target="_blank"
+                rel="noreferrer">FCC</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <p class="contact-description">
+              Whether you have a question, a project idea, or just want to connect, I'm always open to new opportunities
+              and interesting conversations.
+            </p>
+
+            <div class="contact-methods">
+              <a href="mailto:subhamkumar260506@gmail.com" class="contact-method-card">
+                <span class="method-icon">✉️</span>
+                <div class="method-detail">
+                  <span class="method-label">Email Me</span>
+                  <span class="method-value">subhamkumar260506@gmail.com</span>
+                </div>
+              </a>
+              <a href="tel:+918084111304" class="contact-method-card">
+                <span class="method-icon">📞</span>
+                <div class="method-detail">
+                  <span class="method-label">Phone</span>
+                  <span class="method-value">+91-8084111304</span>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/shubham-sharma-227016297/" target="_blank" rel="noreferrer"
+                class="contact-method-card">
+                <span class="method-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" width="24" height="24">
+                    <path fill="currentColor"
+                      d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a2.7 2.7 0 0 0-2.7-2.7c-1.5 0-2.3.8-2.7 1.4v-1.1h-2.5v7.7h2.5v-4.3c0-.6.5-1.1 1.1-1.1s1.1.5 1.1 1.1v4.3h2.5M7 9.5a1.2 1.2 0 1 0-1.2-1.2A1.2 1.2 0 0 0 7 9.5m1.2 9v-7.7H5.8v7.7h2.4z" />
+                  </svg>
+                </span>
+                <div class="method-detail">
+                  <span class="method-label">LinkedIn</span>
+                  <span class="method-value">Connect on LinkedIn</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="social-links-bar">
+              <p>Find me on:</p>
+              <ul class="contact-list">
+                <li>
+                  <a class="social-link" href="https://github.com/Shubham261104" target="_blank" rel="noreferrer"
+                    aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.31 6.84 9.65.5.09.68-.22.68-.49 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.37-3.37-1.37-.46-1.2-1.12-1.52-1.12-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.13-4.56-5.04 0-1.11.39-2.01 1.03-2.72-.1-.26-.45-1.32.1-2.74 0 0 .84-.27 2.75 1.04a9.2 9.2 0 0 1 2.5-.35c.85 0 1.7.12 2.5.35 1.91-1.31 2.75-1.04 2.75-1.04.55 1.42.2 2.48.1 2.74.64.71 1.03 1.61 1.03 2.72 0 3.92-2.34 4.77-4.57 5.03.36.32.67.95.67 1.92 0 1.39-.01 2.51-.01 2.85 0 .27.18.59.69.49A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2z" />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="contact-form-container">
+            <form id="contactForm" class="contact-form" novalidate>
+              <div class="form-row">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your Name" required />
+              </div>
+              <div class="form-row">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="Your Email" required />
+              </div>
+              <div class="form-row">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="How can I help you?" required></textarea>
+              </div>
+              <button class="button primary submit-btn" type="submit">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Shubham Kumar. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+
+</html>
