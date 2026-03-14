@@ -8,6 +8,8 @@
   --card: #111827;
   --border: #1f2937;
   --chip: #0b1220;
+  --nav-bg: rgba(15, 21, 32, 0.7);
+  --btn-bg: #1f2937;
 }
 
 * {
@@ -37,7 +39,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(15, 21, 32, 0.7);
+  background: var(--nav-bg);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
 }
@@ -152,7 +154,7 @@ body {
   gap: 8px;
   text-decoration: none;
   color: var(--text);
-  background: #0d1320;
+  background: var(--btn-bg);
   border: 1px solid var(--border);
   padding: 10px 14px;
   border-radius: 12px;
@@ -162,6 +164,7 @@ body {
 .button.primary {
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
   border-color: transparent;
+  color: #ffffff;
 }
 
 .button.small {
@@ -171,7 +174,7 @@ body {
 
 /* Button hover/active effects */
 .button:hover {
-  background: #111a2a;
+  background: var(--bg-elev);
   border-color: var(--accent);
 }
 
@@ -298,7 +301,7 @@ body {
 
 .skill-percent {
   font-weight: 600;
-  color: var(--accent-2);
+  color: var(--accent);
 }
 
 .skill-bar {
@@ -402,7 +405,7 @@ body {
 }
 
 .tag {
-  background: #0b1320;
+  background: var(--chip);
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 4px 8px;
@@ -746,13 +749,15 @@ body {
 
 @media (prefers-color-scheme: light) {
   :root {
-    --bg: #f8fafc;
+    --bg: #f1f5f9;
     --bg-elev: #ffffff;
     --text: #0f172a;
-    --muted: #64748b;
+    --muted: #475569;
     --card: #ffffff;
     --border: #e2e8f0;
-    --chip: #f1f5f9;
+    --chip: #e2e8f0;
+    --nav-bg: rgba(255, 255, 255, 0.8);
+    --btn-bg: #e2e8f0;
   }
 }
 
@@ -766,15 +771,19 @@ body {
   --card: #111827;
   --border: #1f2937;
   --chip: #0b1220;
+  --nav-bg: rgba(15, 21, 32, 0.7);
+  --btn-bg: #1f2937;
 }
 
 .theme-light:root,
 .theme-light {
-  --bg: #f8fafc;
+  --bg: #f1f5f9;
   --bg-elev: #ffffff;
   --text: #0f172a;
-  --muted: #64748b;
+  --muted: #475569;
   --card: #ffffff;
   --border: #e2e8f0;
-  --chip: #f1f5f9;
+  --chip: #e2e8f0;
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --btn-bg: #e2e8f0;
 }
