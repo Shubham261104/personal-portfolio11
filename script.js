@@ -1,3 +1,39 @@
+// Initial Setup & Loader
+window.addEventListener('load', () => {
+  const loader = document.getElementById('loader');
+  if (loader) {
+    loader.classList.add('hidden');
+    setTimeout(() => loader.remove(), 500);
+  }
+});
+
+// Scroll Progress Bar
+window.addEventListener('scroll', () => {
+  const scrollProgress = document.getElementById('scrollProgress');
+  if (scrollProgress) {
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (window.pageYOffset / totalHeight) * 100;
+    scrollProgress.style.width = progress + '%';
+  }
+});
+
+// Custom Cursor
+(function () {
+  const cursor = document.getElementById('cursor');
+  if (!cursor) return;
+
+  window.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+
+  const interactiveElements = document.querySelectorAll('a, button, .card, .skill-card, .filter, input, textarea');
+  interactiveElements.forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+  });
+})();
+
 // Theme persistence
 (function () {
   const root = document.documentElement;
@@ -119,6 +155,46 @@
   }, observerOptions);
 
   cards.forEach(card => observer.observe(card));
+})();
+
+// Section entry animation (Fade In Up)
+(function () {
+  const elements = document.querySelectorAll('.fade-in');
+  if (!elements.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  elements.forEach(el => observer.observe(el));
+})();
+
+// Scroll Spy: Update active nav link on scroll
+(function () {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= (sectionTop - 200)) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href').includes(current)) {
+        link.classList.add('active');
+      }
+    });
+  });
 })();
 
 // Footer year
