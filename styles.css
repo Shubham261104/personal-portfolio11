@@ -354,10 +354,44 @@ body {
   border: 1px solid var(--border);
   border-radius: 14px;
   box-shadow: 0 10px 28px rgba(12, 18, 28, 0.24);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(124, 58, 237, 0.05),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.skill-card:hover::after {
+  left: 100%;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--accent);
+  box-shadow: 0 20px 40px -15px rgba(124, 58, 237, 0.3);
 }
 
 .skill-icon {
   font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+  transform: scale(1.2) rotate(10deg);
 }
 
 .skill-name {
@@ -379,6 +413,14 @@ body {
 .skill-percent {
   font-weight: 600;
   color: var(--accent);
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.6s ease 0.2s;
+}
+
+.skill-card.animate .skill-percent {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .skill-bar {
@@ -386,16 +428,21 @@ body {
   width: 100%;
   height: 8px;
   border-radius: 999px;
-  background: rgba(148, 163, 184, 0.2);
+  background: rgba(148, 163, 184, 0.1);
   overflow: hidden;
 }
 
 .skill-fill {
   position: absolute;
   inset: 0;
-  width: calc(var(--progress) * 100%);
+  width: 0;
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
   border-radius: inherit;
+  transition: width 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.skill-card.animate .skill-fill {
+  width: calc(var(--progress) * 100%);
 }
 
 .skill-category-title {

@@ -99,6 +99,28 @@
   setInterval(cycle, 2200);
 })();
 
+// Skill scroll animation
+(function () {
+  const cards = document.querySelectorAll('.skill-card');
+  if (!cards.length) return;
+
+  const observerOptions = {
+    threshold: 0.2,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  cards.forEach(card => observer.observe(card));
+})();
+
 // Footer year
 (function () {
   const yearEl = document.getElementById('year');
