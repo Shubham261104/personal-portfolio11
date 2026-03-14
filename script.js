@@ -129,3 +129,89 @@
     closeModal();
   });
 })();
+
+// Interactive background particles
+(function () {
+  const canvas = document.getElementById('bgCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  const mouse = { x: null, y: null, radius: 150 };
+
+  window.addEventListener('mousemove', (e) => {
+    mouse.x = e.x;
+    mouse.y = e.y;
+  });
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    init();
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+
+  function init() {
+    particles = [];
+    const numberOfParticles = (canvas.width * canvas.height) / 9000;
+    for (let i = 0; i < numberOfParticles; i++) {
+      const size = Math.random() * 2 + 1;
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * canvas.height;
+      const directionX = (Math.random() * 1) - 0.5;
+      const directionY = (Math.random() * 1) - 0.5;
+      const color = 'rgba(124, 58, 237, 0.3)';
+      particles.push({ x, y, directionX, directionY, size, color });
+    }
+  }
+
+  function animate() {
+    requestAnimationFrame(animate);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (let i = 0; i < particles.length; i++) {
+      let p = particles[i];
+      p.x += p.directionX;
+      p.y += p.directionY;
+
+      if (p.x > canvas.width || p.x < 0) p.directionX = -p.directionX;
+      if (p.y > canvas.height || p.y < 0) p.directionY = -p.directionY;
+
+      // Mouse interaction
+      let dx = mouse.x - p.x;
+      let dy = mouse.y - p.y;
+      let distance = Math.sqrt(dx * dx + dy * dy);
+      if (distance < mouse.radius) {
+        if (mouse.x < p.x && p.x < canvas.width - p.size * 10) p.x += 1;
+        if (mouse.x > p.x && p.x > p.size * 10) p.x -= 1;
+        if (mouse.y < p.y && p.y < canvas.height - p.size * 10) p.y += 1;
+        if (mouse.y > p.y && p.y > p.size * 10) p.y -= 1;
+      }
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
+      ctx.fill();
+
+      // Connect lines
+      for (let j = i; j < particles.length; j++) {
+        let p2 = particles[j];
+        let dx2 = p.x - p2.x;
+        let dy2 = p.y - p2.y;
+        let dist2 = Math.sqrt(dx2 * dx2 + dy2 * dy2);
+
+        if (dist2 < 120) {
+          ctx.strokeStyle = `rgba(6, 182, 212, ${1 - dist2 / 120})`;
+          ctx.lineWidth = 0.5;
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  animate();
+})();
