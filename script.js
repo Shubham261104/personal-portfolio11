@@ -26,10 +26,14 @@
   toggle.addEventListener('click', () => {
     const open = links.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+    toggle.querySelector('.icon').textContent = open ? '✕' : '☰';
   });
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
     links.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    toggle.querySelector('.icon').textContent = '☰';
   }));
 })();
 
