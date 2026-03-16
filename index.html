@@ -29,15 +29,19 @@
   <div class="floating-shape shape-2"></div>
   <header class="site-header">
     <nav class="nav container">
-      <a class="logo" href="#home" aria-label="Go to home">
-        <h1 style="font-size:48px; margin:0; line-height:1">Portfolio</h1>
-      </a>
-      <button class="icon-button" id="themeToggle" aria-label="Toggle color theme" title="Toggle theme">
-        <span class="icon">🌗</span>
-      </button>
-      <button class="icon-button" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="icon">☰</span>
-      </button>
+      <div class="nav-header">
+        <a class="logo" href="#home" aria-label="Go to home">
+          <h1 style="font-size:48px; margin:0; line-height:1">Portfolio</h1>
+        </a>
+        <div class="nav-controls" style="display:flex; gap:8px;">
+          <button class="icon-button" id="themeToggle" aria-label="Toggle color theme" title="Toggle theme">
+            <span class="icon">🌗</span>
+          </button>
+          <button class="icon-button" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="icon">☰</span>
+          </button>
+        </div>
+      </div>
       <ul class="nav-links" id="navLinks">
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#about">About</a></li>
