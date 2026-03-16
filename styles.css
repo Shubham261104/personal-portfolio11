@@ -17,7 +17,6 @@
 
 * {
   box-sizing: border-box;
-  cursor: none !important; /* Managed by JS */
 }
 
 @media (max-width: 768px) {
@@ -100,24 +99,6 @@ h1, h2, h3, h4, .section-title {
   transition: width 0.1s ease;
 }
 
-/* Custom Cursor */
-#cursor {
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  background: var(--accent);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  mix-blend-mode: difference;
-  transition: transform 0.1s ease, background 0.3s ease;
-  transform: translate(-50%, -50%);
-}
-
-.cursor-hover {
-  transform: translate(-50%, -50%) scale(2.5);
-  background: var(--accent-2);
-}
 
 #bgCanvas {
   position: fixed;
@@ -180,7 +161,7 @@ h1, h2, h3, h4, .section-title {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 18px;
+  gap: 10px;
   margin: 0;
   padding: 0;
 }
@@ -189,9 +170,11 @@ h1, h2, h3, h4, .section-title {
   color: var(--muted);
   text-decoration: none;
   font-weight: 500;
-  padding: 8px 12px;
+  font-size: 14px;
+  padding: 6px 10px;
   border-radius: 8px;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .nav-links a:hover, .nav-links a.active {
@@ -426,6 +409,27 @@ h1, h2, h3, h4, .section-title {
 .profile-actions {
   width: 100%;
   display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.profile-actions .button {
+  flex: 1;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.button.secondary {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+.button.secondary:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
 }
 
 .button.block {
@@ -434,8 +438,133 @@ h1, h2, h3, h4, .section-title {
 }
 
 .section-title {
-  font-size: 28px;
-  margin: 0 0 16px;
+  font-size: clamp(32px, 4vw, 48px);
+  text-align: center;
+  margin: 0 auto 64px;
+  width: fit-content;
+  position: relative;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--text), var(--accent), var(--accent-2), var(--text));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s linear infinite, fade-up 0.8s ease-out;
+  letter-spacing: -0.5px;
+}
+
+.section-title::before {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+  box-shadow: 0 0 15px var(--accent);
+  transition: width 0.3s ease;
+}
+
+.section-title:hover::before {
+  width: 100px;
+}
+
+@keyframes shine {
+  to { background-position: 200% center; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* About Content Styling */
+
+.about-content {
+  margin-bottom: 48px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.about-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 32px 24px;
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 20px 40px -15px rgba(124, 58, 237, 0.2);
+}
+
+.about-card-icon {
+  font-size: 32px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(124, 58, 237, 0.1);
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  color: var(--accent);
+  transition: transform 0.3s ease;
+}
+
+.about-card:hover .about-card-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: rgba(124, 58, 237, 0.2);
+}
+
+.about-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.about-card p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .chip-list {
@@ -458,8 +587,11 @@ h1, h2, h3, h4, .section-title {
 /* Skills */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .skill-card {
@@ -474,6 +606,13 @@ h1, h2, h3, h4, .section-title {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.skill-card.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .skill-card::after {
@@ -564,18 +703,22 @@ h1, h2, h3, h4, .section-title {
 
 .skill-category-title {
   font-size: 20px;
-  margin: 32px 0 16px;
+  margin: 48px 0 24px;
   color: var(--accent-2);
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
 }
 
+.skill-category-title::before,
 .skill-category-title::after {
   content: "";
   flex: 1;
   height: 1px;
-  background: var(--border);
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  max-width: 100px;
 }
 
 .section-head {
@@ -635,8 +778,7 @@ h1, h2, h3, h4, .section-title {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(15, 21, 32, 0.8);
-  backdrop-filter: blur(4px);
+  background: rgba(15, 21, 32, 0.4); /* Reduced opacity for better visibility */
   opacity: 0;
   transition: all 0.3s ease;
 }
@@ -698,6 +840,15 @@ h1, h2, h3, h4, .section-title {
   background: var(--accent);
   color: white;
   border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.button.small svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
 }
 
 .button.small:hover {
@@ -847,6 +998,117 @@ h1, h2, h3, h4, .section-title {
   align-self: flex-start;
 }
 
+/* Achievements Section */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.achievement-card {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.achievement-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--accent);
+  box-shadow: 0 15px 35px -10px rgba(124, 58, 237, 0.2);
+}
+
+.achievement-icon {
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 64px;
+  height: 64px;
+  background: rgba(124, 58, 237, 0.1);
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.achievement-card:hover .achievement-icon {
+  transform: scale(1.1) rotate(10deg);
+  background: rgba(124, 58, 237, 0.2);
+}
+
+.achievement-content h3 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  color: var(--text);
+}
+
+.achievement-content p {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.achievement-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.achievement-actions {
+  margin-top: 16px;
+}
+
+.achievement-actions .button.small {
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: rgba(124, 58, 237, 0.05);
+  border-color: rgba(124, 58, 237, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+}
+
+.achievement-actions .button.small:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+  border-color: var(--accent);
+}
+
+/* Shine Animation for Achievements */
+.achievement-actions .button.small::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+.achievement-actions .button.small:hover::after {
+  left: 100%;
+  top: 100%;
+}
+
 /* Certificates */
 .certificates-grid {
   display: grid;
@@ -865,6 +1127,29 @@ h1, h2, h3, h4, .section-title {
   text-align: center;
   gap: 12px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden; /* Ensure image doesn't bleed out */
+}
+
+.certificate-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+}
+
+.certificate-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Contain the certificate aspect ratio */
+  transition: transform 0.3s ease;
+  background: white; /* Give certificates a clean white background */
+}
+
+.certificate-card:hover .certificate-image img {
+  transform: scale(1.05);
 }
 
 .certificate-card:hover {
@@ -892,6 +1177,53 @@ h1, h2, h3, h4, .section-title {
 
 .certificate-actions {
   margin-top: auto;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  width: 100%;
+}
+
+.certificate-actions .button.small {
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: rgba(124, 58, 237, 0.05);
+  border-color: rgba(124, 58, 237, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex: 1;
+  justify-content: center;
+  min-width: 80px;
+}
+
+.certificate-actions .button.small:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+  border-color: var(--accent);
+}
+
+/* Shine Animation for Certificates */
+.certificate-actions .button.small::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+.certificate-actions .button.small:hover::after {
+  left: 100%;
+  top: 100%;
 }
 
 /* Contact Section */
@@ -1064,6 +1396,144 @@ h1, h2, h3, h4, .section-title {
   margin-top: 8px;
   width: 100%;
   justify-content: center;
+}
+
+/* Training Section */
+.training-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  max-width: 900px;
+  margin: 40px auto 0;
+}
+
+.training-card {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.training-card:hover {
+  transform: scale(1.02);
+  border-color: var(--accent);
+  box-shadow: 0 20px 40px -15px rgba(124, 58, 237, 0.2);
+}
+
+.training-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-right: 1px solid var(--border);
+}
+
+.training-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.training-card:hover .training-image img {
+  transform: scale(1.1);
+}
+
+.training-content {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.training-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.training-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.training-content p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  font-size: 1rem;
+}
+
+.training-meta {
+  display: flex;
+  gap: 20px;
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.training-actions {
+  margin-top: auto;
+}
+
+.training-actions .button.small {
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: rgba(124, 58, 237, 0.05);
+  border-color: rgba(124, 58, 237, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.training-actions .button.small:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+/* Shine Animation */
+.training-actions .button.small::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+.training-actions .button.small:hover::after {
+  left: 100%;
+  top: 100%;
+}
+
+@media (max-width: 768px) {
+  .training-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .training-image {
+    height: 250px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
 }
 
 /* Responsiveness */

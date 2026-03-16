@@ -9,7 +9,9 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
 </head>
@@ -22,7 +24,6 @@
     </div>
   </div>
   <div id="scrollProgress"></div>
-  <div id="cursor"></div>
   <canvas id="bgCanvas"></canvas>
   <div class="floating-shape shape-1"></div>
   <div class="floating-shape shape-2"></div>
@@ -44,6 +45,8 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#certificates">Certificates</a></li>
         <li><a href="#education">Education</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#training">Training</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -67,8 +70,10 @@
             <img class="profile-img" src="image/shubhamport1.jpeg" alt="Shubham Kumar portrait" />
           </div>
           <div class="profile-actions">
-            <a class="button primary block" href="cv/final CV Shubham march26.pdf" target="_blank" rel="noreferrer">See
-              Resume</a>
+            <a class="button primary" href="cv/final CV Shubham march26.pdf" target="_blank" rel="noreferrer">View
+              CV</a>
+            <a class="button secondary" href="cv/final CV Shubham march26.pdf"
+              download="Shubham_Kumar_CV.pdf">Download</a>
           </div>
           <p>I am always excited to work on meaningful projects that help me grow as a developer. I am open to
             opportunities where I can apply my skills, learn new technologies, and contribute to building innovative and
@@ -79,17 +84,45 @@
 
     <section id="about" class="section fade-in">
       <div class="container">
-        <h2 class="section-title">About</h2>
+        <h2 class="section-title">About Me</h2>
 
-        <p>
-          I am a passionate developer who enjoys building efficient, user-friendly, and modern web applications.
-          I focus on writing clean code and creating responsive interfaces that provide a great user experience.
-          My curiosity drives me to explore new technologies, tools, and frameworks while continuously improving
-          my development skills. I enjoy analyzing problems and finding efficient solutions, and I am motivated by
-          the challenge of turning ideas into functional and high-performance applications. I believe in continuous
-          learning, staying updated with modern development practices, and collaborating with others to grow and
-          contribute positively to projects and teams.
-        </p>
+        <div class="about-content">
+          <p class="about-text">
+            I am a passionate developer who enjoys building efficient, user-friendly, and modern web applications.
+            My journey in software engineering is fueled by a curiosity to understand how things work and a desire
+            to create solutions that solve real-world problems. I specialize in crafting responsive interfaces and
+            robust backend systems, always keeping the user experience at the forefront of my development process.
+          </p>
+          <!-- <p class="about-text">
+            I believe that great software is the result of clean code, thoughtful design, and continuous iteration. 
+            Whether I'm working with React on the frontend or Node.js on the backend, I strive for excellence in 
+            every line of code I write. I am always eager to take on new challenges and collaborate with other 
+            passionate individuals to build something amazing.
+          </p> -->
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card">
+            <div class="about-card-icon">💻</div>
+            <h3>Modern Development</h3>
+            <p>I focus on using the latest technologies and best practices to build fast, scalable, and secure
+              applications that stand the test of time.</p>
+          </div>
+
+          <div class="about-card">
+            <div class="about-card-icon">🧠</div>
+            <h3>Problem Solving</h3>
+            <p>I enjoy the challenge of solving complex puzzles, optimizing algorithms, and finding elegant solutions to
+              technical hurdles.</p>
+          </div>
+
+          <div class="about-card">
+            <div class="about-card-icon">✨</div>
+            <h3>Creative Design</h3>
+            <p>I bridge the gap between functionality and aesthetics, ensuring that every project is not only powerful
+              but also visually engaging.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -113,7 +146,7 @@
               <div class="skill-fill" style="--progress:0.85"></div>
             </div>
           </div>
-          <div class="skill-card" role="listitem">
+          <!-- <div class="skill-card" role="listitem">
             <div class="skill-header">
               <div class="skill-info">
                 <span class="skill-icon" aria-hidden="true">🔷</span>
@@ -124,7 +157,7 @@
             <div class="skill-bar">
               <div class="skill-fill" style="--progress:0.8"></div>
             </div>
-          </div>
+          </div> -->
           <div class="skill-card" role="listitem">
             <div class="skill-header">
               <div class="skill-info">
@@ -310,7 +343,7 @@
     <section id="projects" class="section fade-in">
       <div class="container">
         <div class="section-head">
-          <h2 class="section-title">Projects</h2>
+          <h2 class="section-title">Featured Projects</h2>
           <div class="filters" role="group" aria-label="Filter projects">
             <button class="chip filter active" data-filter="all">All</button>
             <button class="chip filter" data-filter="frontend">Frontend</button>
@@ -331,8 +364,14 @@
                 class="tag">CSS</span><span class="tag">JS</span>
             </div>
             <div class="card-actions">
-              <a class="button small" href="https://github.com/Shubham261104/Production-Planning" target="_blank" rel="noreferrer">GitHub</a>
-              <a class="button small" href="#" target="_blank" rel="noreferrer">Live Demo</a>
+              <a class="button small" href="https://github.com/Shubham261104/Production-Planning" target="_blank"
+                rel="noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.31 6.84 9.65.5.09.68-.22.68-.49 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.37-3.37-1.37-.46-1.2-1.12-1.52-1.12-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.13-4.56-5.04 0-1.11.39-2.01 1.03-2.72-.1-.26-.45-1.32.1-2.74 0 0 .84-.27 2.75 1.04a9.2 9.2 0 0 1 2.5-.35c.85 0 1.7.12 2.5.35 1.91-1.31 2.75-1.04 2.75-1.04.55 1.42.2 2.48.1 2.74.64.71 1.03 1.61 1.03 2.72 0 3.92-2.34 4.77-4.57 5.03.36.32.67.95.67 1.92 0 1.39-.01 2.51-.01 2.85 0 .27.18.59.69.49A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2z" />
+                </svg>
+                View Code
+              </a>
             </div>
           </article>
 
@@ -348,8 +387,15 @@
                 class="tag">Node.js</span>
             </div>
             <div class="card-actions">
-              <a class="button small" href="https://github.com/Shubham261104/Traning-Managment-System/tree/main/SkillBridge" target="_blank" rel="noreferrer">GitHub</a>
-              <a class="button small" href="#" target="_blank" rel="noreferrer">Live Demo</a>
+              <a class="button small"
+                href="https://github.com/Shubham261104/Traning-Managment-System/tree/main/SkillBridge" target="_blank"
+                rel="noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.31 6.84 9.65.5.09.68-.22.68-.49 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.37-3.37-1.37-.46-1.2-1.12-1.52-1.12-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.13-4.56-5.04 0-1.11.39-2.01 1.03-2.72-.1-.26-.45-1.32.1-2.74 0 0 .84-.27 2.75 1.04a9.2 9.2 0 0 1 2.5-.35c.85 0 1.7.12 2.5.35 1.91-1.31 2.75-1.04 2.75-1.04.55 1.42.2 2.48.1 2.74.64.71 1.03 1.61 1.03 2.72 0 3.92-2.34 4.77-4.57 5.03.36.32.67.95.67 1.92 0 1.39-.01 2.51-.01 2.85 0 .27.18.59.69.49A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2z" />
+                </svg>
+                View Code
+              </a>
             </div>
           </article>
 
@@ -363,8 +409,14 @@
               <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
             </div>
             <div class="card-actions">
-              <a class="button small" href="https://github.com/Shubham261104/Tic-Tac-Toe-Game" target="_blank" rel="noreferrer">GitHub</a>
-              <a class="button small" href="#" target="_blank" rel="noreferrer">Live Demo</a>
+              <a class="button small" href="https://github.com/Shubham261104/Tic-Tac-Toe-Game" target="_blank"
+                rel="noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.31 6.84 9.65.5.09.68-.22.68-.49 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.37-3.37-1.37-.46-1.2-1.12-1.52-1.12-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.13-4.56-5.04 0-1.11.39-2.01 1.03-2.72-.1-.26-.45-1.32.1-2.74 0 0 .84-.27 2.75 1.04a9.2 9.2 0 0 1 2.5-.35c.85 0 1.7.12 2.5.35 1.91-1.31 2.75-1.04 2.75-1.04.55 1.42.2 2.48.1 2.74.64.71 1.03 1.61 1.03 2.72 0 3.92-2.34 4.77-4.57 5.03.36.32.67.95.67 1.92 0 1.39-.01 2.51-.01 2.85 0 .27.18.59.69.49A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2z" />
+                </svg>
+                View Code
+              </a>
             </div>
           </article>
 
@@ -379,8 +431,14 @@
               <span class="tag">Python</span>
             </div>
             <div class="card-actions">
-              <a class="button small" href="https://github.com/Shubham261104/Virtual-Memory-Optimization" target="_blank" rel="noreferrer">GitHub</a>
-              <a class="button small" href="#" target="_blank" rel="noreferrer">Live Demo</a>
+              <a class="button small" href="https://github.com/Shubham261104/Virtual-Memory-Optimization"
+                target="_blank" rel="noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.31 6.84 9.65.5.09.68-.22.68-.49 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.37-3.37-1.37-.46-1.2-1.12-1.52-1.12-1.52-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.13-4.56-5.04 0-1.11.39-2.01 1.03-2.72-.1-.26-.45-1.32.1-2.74 0 0 .84-.27 2.75 1.04a9.2 9.2 0 0 1 2.5-.35c.85 0 1.7.12 2.5.35 1.91-1.31 2.75-1.04 2.75-1.04.55 1.42.2 2.48.1 2.74.64.71 1.03 1.61 1.03 2.72 0 3.92-2.34 4.77-4.57 5.03.36.32.67.95.67 1.92 0 1.39-.01 2.51-.01 2.85 0 .27.18.59.69.49A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2z" />
+                </svg>
+                View Code
+              </a>
             </div>
           </article>
         </div>
@@ -391,61 +449,12 @@
       <div class="container">
         <h2 class="section-title">Certificates</h2>
         <div class="certificates-grid">
-          <div class="certificate-card">
-            <div class="certificate-icon">🔷</div>
-            <h3>C Programming</h3>
-            <p>Fundamentals of C programming language and problem solving</p>
-            <div class="certificate-actions">
-              <a class="button small" href="Certifacate/C language.pdf" target="_blank" rel="noreferrer">View
-                Certificate</a>
-              <a class="button small" href="Certifacate/CSE101(C).pdf" target="_blank" rel="noreferrer">CSE101</a>
-              <a class="button small" href="Certifacate/GFG(C).pdf" target="_blank" rel="noreferrer">GFG</a>
-            </div>
-          </div>
 
           <div class="certificate-card">
-            <div class="certificate-icon">➕</div>
-            <h3>C++ Programming</h3>
-            <p>Object-oriented programming with C++ and advanced concepts</p>
-            <div class="certificate-actions">
-              <a class="button small" href="Certifacate/CSE202 (CPP).pdf" target="_blank" rel="noreferrer">View
-                Certificate</a>
-              <a class="button small" href="Certifacate/CPPGFG.pdf" target="_blank" rel="noreferrer">GFG</a>
+            <div class="certificate-image">
+              <img src="Certifacate/gen-ai.png" alt="Build Generative AI Certificate Preview">
             </div>
-          </div>
-
-          <div class="certificate-card">
-            <div class="certificate-icon">🐍</div>
-            <h3>Python Programming</h3>
-            <p>Introduction to Python programming and its applications</p>
-            <div class="certificate-actions">
-              <a class="button small" href="Certifacate/Introduction to Python.pdf" target="_blank"
-                rel="noreferrer">View Certificate</a>
-            </div>
-          </div>
-
-          <div class="certificate-card">
-            <div class="certificate-icon">☕</div>
-            <h3>Java Programming</h3>
-            <p>Java programming fundamentals and object-oriented concepts</p>
-            <div class="certificate-actions">
-              <a class="button small" href="Certifacate/JavaIamNeo.pdf" target="_blank" rel="noreferrer">View
-                Certificate</a>
-            </div>
-          </div>
-
-          <div class="certificate-card">
-            <div class="certificate-icon">🧩</div>
-            <h3>Data Structures & Algorithms</h3>
-            <p>Advanced data structures and algorithmic problem solving</p>
-            <div class="certificate-actions">
-              <a class="button small" href="Certifacate/CSE 205(DSA).pdf" target="_blank" rel="noreferrer">View
-                Certificate</a>
-            </div>
-          </div>
-
-          <div class="certificate-card">
-            <div class="certificate-icon">🧠</div>
+            <!-- <div class="certificate-icon">🧠</div> -->
             <h3>Build Generative AI</h3>
             <p>Solutions with No-Code Tools and GenAI integration</p>
             <div class="certificate-actions">
@@ -457,7 +466,10 @@
           </div>
 
           <div class="certificate-card">
-            <div class="certificate-icon">🌐</div>
+            <div class="certificate-image">
+              <img src="Certifacate/networking.png" alt="Computer Networking Certificate Preview">
+            </div>
+            <!-- <div class="certificate-icon">🌐</div> -->
             <h3>Computer Networking</h3>
             <p>Network communication, protocols, and architecture</p>
             <div class="certificate-actions">
@@ -469,7 +481,10 @@
           </div>
 
           <div class="certificate-card">
-            <div class="certificate-icon">🔗</div>
+            <div class="certificate-image">
+              <img src="Certifacate/advanced-networking.png" alt="Advanced Networking Certificate Preview">
+            </div>
+            <!-- <div class="certificate-icon">🔗</div> -->
             <h3>Advanced Networking</h3>
             <p>TCP/IP, Peer-to-Peer, and Local Area Networks</p>
             <div class="certificate-actions">
@@ -481,7 +496,10 @@
           </div>
 
           <div class="certificate-card">
-            <div class="certificate-icon">📡</div>
+            <div class="certificate-image">
+              <img src="Certifacate/packet-switching.png" alt="Packet Switching Certificate Preview">
+            </div>
+            <!-- <div class="certificate-icon">📡</div> -->
             <h3>Packet Switching</h3>
             <p>Network algorithms and packet switching technologies</p>
             <div class="certificate-actions">
@@ -493,7 +511,10 @@
           </div>
 
           <div class="certificate-card">
-            <div class="certificate-icon">🤖</div>
+            <div class="certificate-image">
+              <img src="Certifacate/gpt4-prompting.png" alt="GPT-4 Prompt Engineering Certificate Preview">
+            </div>
+            <!-- <div class="certificate-icon">🤖</div> -->
             <h3>GPT-4 Prompt Engineering</h3>
             <p>Mastering ChatGPT, GenAI, and LLM prompting strategies</p>
             <div class="certificate-actions">
@@ -503,7 +524,10 @@
           </div>
 
           <div class="certificate-card">
-            <div class="certificate-icon">☁️</div>
+            <div class="certificate-image">
+              <img src="Certifacate/cloud-computing.png" alt="Cloud Computing Certificate Preview">
+            </div>
+            <!-- <div class="certificate-icon">☁️</div> -->
             <h3>Cloud & Systems</h3>
             <p>Cloud Computing and Hardware/OS fundamentals</p>
             <div class="certificate-actions">
@@ -514,51 +538,9 @@
             </div>
           </div>
 
-          <div class="certificate-card">
-            <div class="certificate-icon">🏢</div>
-            <h3>Infosys Professional</h3>
-            <p>Computational Theory and industry-standard skills</p>
-            <div class="certificate-actions">
-              <a class="button small" href="Certifacate/Infosis.pdf" target="_blank" rel="noreferrer">Professional</a>
-              <a class="button small" href="Certifacate/Computational Theory infosis.pdf" target="_blank"
-                rel="noreferrer">Comp Theory</a>
-            </div>
-          </div>
 
-          <div class="certificate-card">
-            <div class="certificate-icon">🏆</div>
-            <h3>Academic & Recognition</h3>
-            <p>LPU achievements, Campus Ambassador, and Symposiums</p>
-            <div class="certificate-actions">
-              <a class="button small" href="Certifacate/Campus Ambassador.pdf" target="_blank"
-                rel="noreferrer">Ambassador</a>
-              <a class="button small" href="Certifacate/SYMPOSIUM.pdf" target="_blank" rel="noreferrer">Symposium</a>
-            </div>
-          </div>
 
-          <div class="certificate-card" id="lpu2025">
-            <div class="certificate-icon">🎓</div>
-            <h3>Training - LPU 2025</h3>
-            <p>Comprehensive industrial training program at Lovely Professional University. Focused on advanced software
-              engineering workflows, technical problem-solving, and industry-readiness as part of the 2025 academic
-              initiative.</p>
-            <div class="certificate-actions">
-              <a class="button small" href="Certifacate/LPU2025.pdf" target="_blank" rel="noreferrer">View
-                Certificate</a>
-            </div>
-          </div>
 
-          <div class="certificate-card">
-            <div class="certificate-icon">💬</div>
-            <h3>AI Essentials</h3>
-            <p>ChatGPT Essentials and FreeCodeCamp certifications</p>
-            <div class="certificate-actions">
-              <a class="button small" href="Certifacate/ChatGPT Made Easy AI Essentials for Beginners.pdf"
-                target="_blank" rel="noreferrer">AI Easy</a>
-              <a class="button small" href="Certifacate/Freecodecamp Certificate.pdf" target="_blank"
-                rel="noreferrer">FCC</a>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -597,6 +579,97 @@
               <p class="school-name">Vivekanand Mission School</p>
               <p class="school-location">Aurangabad, Bihar</p>
               <div class="edu-badge">PERCENTAGE : 75%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements" class="section fade-in">
+      <div class="container">
+        <h2 class="section-title">Achievements</h2>
+        <div class="achievements-grid">
+          <div class="achievement-card">
+            <div class="achievement-icon">🔥</div>
+            <div class="achievement-content">
+              <h3>50 Day Streak</h3>
+              <p>Achieved a consistent 50-day problem-solving streak on LeetCode, demonstrating dedication and
+                discipline.</p>
+              <span class="achievement-tag">LeetCode</span>
+              <div class="achievement-actions">
+                <a href="image/leetcode-50-days.jpg" class="button small" target="_blank" rel="noreferrer">View
+                  Badge</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-icon">🚀</div>
+            <div class="achievement-content">
+              <h3>250+ Problems Solved</h3>
+              <p>Successfully solved over 250 coding challenges across major platforms like LeetCode, GFG, and
+                HackerRank.</p>
+              <span class="achievement-tag">Competitive Programming</span>
+            </div>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-icon">🏅</div>
+            <div class="achievement-content">
+              <h3>Campus Brand Ambassador</h3>
+              <p>Selected as Campus Brand Ambassador in Acmegrade Pvt Ltd</p>
+              <span class="achievement-tag">Leadership</span>
+              <div class="achievement-actions">
+                <a href="Certifacate/Campus Ambassador.pdf" class="button small" target="_blank" rel="noreferrer">View
+                  Certificate</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="training" class="section fade-in">
+      <div class="container">
+        <h2 class="section-title">Professional Training</h2>
+        <div class="training-grid">
+          <div class="training-card">
+            <div class="training-image">
+              <img src="image/dsa-training.png" alt="Data Structures Training Certificate">
+            </div>
+            <div class="training-content">
+              <div class="training-badge">LPU Centre for Professional Enhancement</div>
+              <h3>Fundamentals of Data Structures</h3>
+              <p>Completed an intensive skill development course focusing on learning, applying, and building projects
+                using advanced Data Structures. Obtained an 'A' Grade for excellence in project implementation.</p>
+              <div class="training-meta">
+                <span>📅 June - July 2025</span>
+                <span>🏆 Grade A</span>
+              </div>
+              <div class="training-actions">
+                <a href="Certifacate/LPU2025.pdf" class="button small" target="_blank" rel="noreferrer">View
+                  Certificate</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="training-card">
+            <div class="training-image">
+              <img src="image/cybersec-training.jpg" alt="CyberSec Symposium Certificate">
+            </div>
+            <div class="training-content">
+              <div class="training-badge">CyberSec Symposium 2.0</div>
+              <h3>Cyber Security Training</h3>
+              <p>Participated in North India's largest Cyber Security conference. Gained insights into modern security
+                protocols, network defense, and ethical hacking from industry experts and CompTIA partners.</p>
+              <div class="training-meta">
+                <span>📅 April 2024</span>
+                <span>🏛️ LPU Punjab</span>
+              </div>
+              <div class="training-actions">
+                <a href="Certifacate/SYMPOSIUM.pdf" class="button small" target="_blank" rel="noreferrer">View
+                  Certificate</a>
+              </div>
             </div>
           </div>
         </div>

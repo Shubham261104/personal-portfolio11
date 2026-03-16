@@ -17,22 +17,6 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Custom Cursor
-(function () {
-  const cursor = document.getElementById('cursor');
-  if (!cursor) return;
-
-  window.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-  });
-
-  const interactiveElements = document.querySelectorAll('a, button, .card, .skill-card, .filter, input, textarea');
-  interactiveElements.forEach(el => {
-    el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
-  });
-})();
 
 // Theme persistence
 (function () {
@@ -135,26 +119,40 @@ window.addEventListener('scroll', () => {
   setInterval(cycle, 2200);
 })();
 
-// Skill scroll animation
+// Skill scroll animation with staggering
 (function () {
   const cards = document.querySelectorAll('.skill-card');
   if (!cards.length) return;
 
   const observerOptions = {
-    threshold: 0.2,
+    threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
   };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('animate');
-        observer.unobserve(entry.target);
+        const grid = entry.target.closest('.skills-grid');
+        if (grid) {
+          const gridCards = Array.from(grid.querySelectorAll('.skill-card'));
+          gridCards.forEach((card, index) => {
+            setTimeout(() => {
+              card.classList.add('animate');
+            }, index * 100);
+          });
+          observer.unobserve(entry.target);
+        } else {
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
+        }
       }
     });
   }, observerOptions);
 
-  cards.forEach(card => observer.observe(card));
+  // We observe the grid or the cards? Observing the grid container might be better for staggering 
+  // but the user might scroll slowly. Staggering within a grid when the first card hits is common.
+  const grids = document.querySelectorAll('.skills-grid');
+  grids.forEach(grid => observer.observe(grid));
 })();
 
 // Section entry animation (Fade In Up)
