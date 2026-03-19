@@ -2,8 +2,13 @@
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
   if (loader) {
-    loader.classList.add('hidden');
-    setTimeout(() => loader.remove(), 500);
+    // We wait for the progress bar animation (2s) to complete
+    setTimeout(() => {
+      loader.classList.add('hidden');
+      document.body.classList.add('loaded'); // Signal that site is ready
+      // Remove from DOM after transition finishes (matches CSS transition time 1s)
+      setTimeout(() => loader.remove(), 1000);
+    }, 2000);
   }
 });
 
